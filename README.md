@@ -31,3 +31,20 @@ pip install -r requirements.txt
 ```
 
 
+### Folder Structure
+    .
+    ├── model_cache/          # Directory for storing cached models
+    ├── email_analyzer.py     # Main class for email analysis
+    ├── requirements.txt      # Required Python dependencies
+    └── README.md             # Project documentation
+
+### Dependencies
+The project relies on the following Python libraries:
+
+- transformers – For loading and using the pre-trained BART model.
+- torch – For running AI models on both CPU and GPU.
+- pathlib – For handling directory creation and model caching.
+- logging – For recording logs during model loading and email generation.
+
+### Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or want to add features.
