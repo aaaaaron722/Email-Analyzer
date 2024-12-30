@@ -1,4 +1,5 @@
 # Email-Analyzer
+![img](icons/icon512.png)
 ### Description
 
 Email Analyzer is a Python-based tool that leverages AI models to automatically analyze and generate email content. The tool uses the facebook/bart-large-cnn model to summarize and process large email bodies, making it easier to quickly understand key points or automatically generate replies.
