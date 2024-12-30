@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Email Analyzer",
+  "version": "1.0",
+  "description": "幫助分析和總結郵件內容的 Chrome Plugin。並使用本地模型進行摘要生成",
+  "action": {
+    "default_popup": "HTML/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "64": "icons/icon64.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost:5001/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png"
+  }
+}

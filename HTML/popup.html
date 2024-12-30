@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Email Analyzer</title>
+    <style>
+        body {
+            width: 380px;
+            padding: 10px;
+            margin: 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .title-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .textarea-container {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        #emailContent {
+            width: 100%;
+            min-height: 120px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+            font-size: 14px;
+            font-family: inherit;
+            box-sizing: border-box;
+            line-height: 1.5;
+        }
+
+        .word-count {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 12px;
+            color: #666;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .button {
+            flex: 1;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .primary {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .secondary {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
+        }
+
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #result {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            min-height: 40px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .error {
+            color: #dc3545;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        .loading {
+            color: #666;
+            font-style: italic;
+        }
+
+        .loading-dots:after {
+            content: '';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../icons/icon32.png" alt="Email Analyzer" class="title-icon">
+            <div class="title">Email Analyzer</div>
+        </div>
+        <div class="textarea-container">
+            <textarea 
+                id="emailContent" 
+                placeholder="Please input email content..."
+            ></textarea>
+            <div class="word-count">0 words</div>
+        </div>
+        <div class="button-group">
+            <button id="summarizeBtn" class="button primary">Summarize</button>
+            <button id="replyBtn" class="button secondary">Reply</button>
+        </div>
+        <div id="result"></div>
+        <div id="tips">The generated content may go wrong, please try again.</div>
+    </div>
+    <script src="../JS/popup.js"></script>
+</body>
+</html>
