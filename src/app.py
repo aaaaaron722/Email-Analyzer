@@ -45,7 +45,7 @@ class EmailGenerator:
 
     def generate_reply(self, original_email):
         try:
-            # 构建详细的英文 prompt，包含具体的邮件结构指导
+            # Build prompt
             prompt = f"""As the recipient, write a concise, professional reply to the following email:
             
             Guidelines:
@@ -67,13 +67,13 @@ class EmailGenerator:
 
                 reply_ids = self.model.generate(
                     inputs["input_ids"],
-                    max_length=350,            # 适当增加长度以容纳完整回复
-                    min_length=100,            # 确保回复够详细
+                    max_length=350,            # remain the porperly length
+                    min_length=100,            # make sure the reply is enough length
                     length_penalty=1.5,
                     num_beams=5,
                     early_stopping=True,
                     no_repeat_ngram_size=3,
-                    temperature=0.7,           # 保持较低温度以确保专业性
+                    temperature=0.7,           
                     top_k=50,
                     top_p=0.9,
                     do_sample=False,
@@ -94,7 +94,7 @@ class EmailGenerator:
     def format_reply(self, reply):
         """Improve email formatting for professional appearance"""
         
-        # 标准化问候语
+        # Examples of greetings
         common_greetings = ['dear', 'hello', 'hi', 'greetings']
         if not any(reply.lower().startswith(greeting) for greeting in common_greetings):
             reply = "Dear [Name],\n\n" + reply
@@ -139,7 +139,7 @@ class EmailGenerator:
     def clean_reply(self, reply):
         """Clean and polish the generated reply"""
         
-        # 移除重复句子
+        # remove the duplicated
         sentences = reply.split('.')
         unique_sentences = []
         seen = set()
