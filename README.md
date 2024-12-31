@@ -49,3 +49,7 @@ The project relies on the following Python libraries:
 
 ### Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or want to add features.
+
+### Limitation
+Cuz the model was trained by google, And the input data usually in English. So there is a problem that is this application may not read the email content in Madarian. 
+Also the suggested reply still have some problem. I am trying to figure out.
