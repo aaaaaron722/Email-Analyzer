@@ -16,14 +16,14 @@ CORS(app)
 
 class EmailGenerator:
     def __init__(self):
-        logger.info("正在初始化模型...")
+        logger.info("Loading the model...")
         try:
             cache_dir = Path("./model_cache")
             cache_dir.mkdir(exist_ok=True)
             
             model_name = "google/flan-t5-base"
             
-            logger.info("正在加載本地模型...")
+            logger.info("Loading...")
             
             self.tokenizer = T5Tokenizer.from_pretrained(
                 model_name, 
@@ -37,11 +37,11 @@ class EmailGenerator:
             
             self.device = "cuda" if torch.cuda.is_available() else "cpu"
             self.model.to(self.device)
-            logger.info(f"模型已加載，使用設備: {self.device}")
+            logger.info(f"Model is already loaded，used by: {self.device}")
             
         except Exception as e:
-            logger.error(f"模型加載失敗：{str(e)}")
-            raise Exception("模型初始化失敗，請稍後重試")
+            logger.error(f"Loading error：{str(e)}")
+            raise Exception("Loading error, please try again")
 
     def generate_reply(self, original_email):
         try:
