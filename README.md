@@ -4,6 +4,12 @@
 
 Email Analyzer is a Python-based tool that leverages AI models to automatically analyze and generate email content. The tool uses the facebook/bart-large-cnn model to summarize and process large email bodies, making it easier to quickly understand key points or automatically generate replies.
 
+## Limitation
+This is very important before u installation.
+1. The suggested reply still have some problem. I am trying to figure out.
+2. Cuz the model was trained by google, And the input data usually in English. So there is a problem that is this application may not read the email content in Mandarin.
+
+
 ### Features
 - Load and utilize the facebook/bart-large-cnn AI model for natural language processing.
 - Automatically generate email summaries.
@@ -50,6 +56,3 @@ The project relies on the following Python libraries:
 ### Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or want to add features.
 
-### Limitation
-Cuz the model was trained by google, And the input data usually in English. So there is a problem that is this application may not read the email content in Mandarin. 
-Also the suggested reply still have some problem. I am trying to figure out.
